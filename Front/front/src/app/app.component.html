@@ -1,0 +1,22 @@
+<p-table 
+    [value]="client" 
+    [resizableColumns]="true" 
+    columnResizeMode="expand" 
+    styleClass="p-datatable-gridlines" 
+    [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pResizableColumn>id</th>
+                <th pResizableColumn>Nome da Empresa</th>
+                <th pResizableColumn>Porte</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.nomeEmpresa}}</td>
+                <td>{{product.porte | tamanho}}</td>
+                <td></td>
+            </tr>
+        </ng-template>
+</p-table>

@@ -41,12 +41,23 @@ namespace Fiap.Health.Med.Api.Controllers
 
 
         /// <summary>
-        /// Adiciona um novo agendamento.
+        /// Adiciona um novo cliente.
         /// </summary>
         /// <param name="cliente"></param>
         /// <returns>O cliente foi adicionado ou um erro 400 em caso de falha na adição.</returns>
         [HttpPost("Cadastrar")]
         public async Task<ActionResult> Adicionar(AdicionarClienteCommand cliente)
+        {
+            return CreatedAtAction(nameof(ObterTodos), new { id = await _mediator.Send(cliente) });
+        }
+
+        /// <summary>
+        /// atulizar um cliente.
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns>O cliente foi adicionado ou um erro 400 em caso de falha na adição.</returns>
+        [HttpPut("atulizar")]
+        public async Task<ActionResult> atulizar(AtualizarClienteCommand cliente)
         {
             return CreatedAtAction(nameof(ObterTodos), new { id = await _mediator.Send(cliente) });
         }
