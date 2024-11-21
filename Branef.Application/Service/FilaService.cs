@@ -14,7 +14,8 @@ namespace Branef.Application.Service
 
         public async Task PublicarFila(ClienteEvent clienteEvent)
         {
-            await _bus.Publish(clienteEvent);
+            var endpoint = await _bus.GetSendEndpoint(new Uri("queue:ConsumerCliente"));
+            await endpoint.Send(clienteEvent);
         }
     }
 }

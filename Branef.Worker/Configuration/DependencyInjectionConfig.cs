@@ -6,7 +6,7 @@ using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Delivery.Email.Configuration;
+namespace Branef.Worker.Configuration;
 
 
 public static class DependencyInjectionConfig
@@ -18,7 +18,8 @@ public static class DependencyInjectionConfig
         {
             x.AddConsumer<ConsumerCliente>();
 
-            x.UsingRabbitMq((context,cfg) => {
+            x.UsingRabbitMq((context, cfg) =>
+            {
                 cfg.ConfigureEndpoints(context);
             });
         });

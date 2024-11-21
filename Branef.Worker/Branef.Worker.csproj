@@ -13,6 +13,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
 	</ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\Branef.Application\Branef.Application.csproj" />
 	  <ProjectReference Include="..\Branef.Domain\Branef.Domain.csproj" />
 	  <ProjectReference Include="..\Branef.Infrastructure\Branef.Infrastructure.csproj" />
 	</ItemGroup>

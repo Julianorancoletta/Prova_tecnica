@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Fiap.Health.Med.Api.Controllers
 {
-    [Route("api")]
+    [Route("api/[controller]")]
     public class ClienteController : MainController<ClienteController>
     {
         private readonly ILogger _logger;

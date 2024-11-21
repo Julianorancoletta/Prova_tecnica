@@ -1,18 +1,35 @@
-﻿using Branef.Domain.Entity;
+﻿using Branef.Application.Features.Clientes.Events;
+using Branef.Domain.Interfaces;
+using Branef.Worker.Convert;
 using MassTransit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Branef.Worker.Service
 {
-    public class ConsumerCliente : IConsumer<Cliente> , IConsumerCliente
+    public class ConsumerCliente : IConsumer<ClienteEvent>
     {
-        public Task Consume(ConsumeContext<Cliente> context)
+        private readonly IClienteMongoRepositorio _clienteMongoRepositorio;
+        public ConsumerCliente(IClienteMongoRepositorio clienteMongoRepositorio) 
         {
-            return Task.CompletedTask;
+            _clienteMongoRepositorio = clienteMongoRepositorio;
+        }
+        public async Task Consume(ConsumeContext<ClienteEvent> context)
+        {
+            var cliente = context.Message.Convertcliente();
+
+            switch (context.Message.ETipoFIla)
+            {
+                case Domain.Enums.ETipoFIla.create:
+                    await _clienteMongoRepositorio.CreateAsync(cliente);
+                    break;
+                case Domain.Enums.ETipoFIla.update:
+                    await _clienteMongoRepositorio.UpdateAsync(cliente.Id, cliente);
+                    break;
+                case Domain.Enums.ETipoFIla.delete:
+                    await _clienteMongoRepositorio.RemoveAsync(cliente.Id);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

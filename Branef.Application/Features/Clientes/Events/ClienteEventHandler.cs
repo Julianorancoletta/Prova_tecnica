@@ -20,25 +20,7 @@ namespace Branef.Application.Features.Clientes.Events
 
         public async Task Handle(ClienteEvent message, CancellationToken cancellationToken)
         {
-            var cliente = message.Convertcliente();
-
-            switch (message.ETipoFIla)  
-            {
-                case Domain.Enums.ETipoFIla.create:
-                    await _clienteMongoRepositorio.CreateAsync(cliente);
-                    break;
-                case Domain.Enums.ETipoFIla.update:
-                    await _clienteMongoRepositorio.UpdateAsync(cliente.Id,cliente);
-                    break;
-                case Domain.Enums.ETipoFIla.delete:
-                    await _clienteMongoRepositorio.RemoveAsync(cliente.Id);
-                    break;
-                default:
-                    break;
-            }
-
-
-            //await _bus.PublicarFila(message);
+            await _bus.PublicarFila(message);
 
         }
     }
