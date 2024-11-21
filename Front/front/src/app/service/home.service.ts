@@ -11,22 +11,19 @@ export class HomeService extends BaseService {
 
   getClienteList(): Observable<any[]> {
     return this.http
-      .get(`${this.UrlService}/api`, super.ObterAuthHeaderJson())
+      .get(`${this.UrlService}/api`)
       .pipe(map(this.extractData), catchError(this.serviceError));
   }
 
-  PostEspeciality(body: any): Observable<any> {
+  PostCliente(body: any): Observable<any> {
     return this.http
-      .post(`${this.UrlService}/Especiality`, body, super.ObterAuthHeaderJson())
+      .post(`${this.UrlService}/api/Cadastrar`, body)
       .pipe(map(this.extractData), catchError(this.serviceError));
   }
 
-  DeleteEspeciality(id: number): Observable<number> {
+  DeleteCliente(id: number): Observable<number> {
     return this.http
-      .delete(
-        `${this.UrlService}/Especiality/${id}`,
-        super.ObterAuthHeaderJson()
-      )
+      .delete(`${this.UrlService}`)
       .pipe(map(this.extractData), catchError(this.serviceError));
   }
 }

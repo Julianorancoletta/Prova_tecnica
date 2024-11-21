@@ -68,7 +68,7 @@ namespace Fiap.Health.Med.Api.Controllers
         /// </summary>
         /// <param name="cliente"></param>
         /// <returns>Um código 201 em caso de sucesso no remocao ou um erro 400 em caso de falha.</returns>
-        [HttpPut("Remover")]
+        [HttpDelete]
         public async Task<ActionResult> Cancelar(RemoverClienteCommand cliente)
         {
             return CreatedAtAction(nameof(ObterTodos), new { id = await _mediator.Send(cliente) });

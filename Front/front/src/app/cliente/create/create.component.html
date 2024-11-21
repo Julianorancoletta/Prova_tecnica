@@ -1,0 +1,30 @@
+<form [formGroup]="ClienteFrom" (ngSubmit)="Salvar()">
+    <div class="formgrid grid">
+        <div class="field col-12">
+            <label for="firstname6">Nome</label>
+            <input id="firstname6" type="text"
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" 
+                [formControl]="ClienteFrom.controls.nomeEmpresa">
+        </div>
+    </div>
+
+    <div class="field col-12 md:col-6">
+        <label for="Porte">Porte</label>
+        <div *ngFor="let category of TipoPorte" class="field-checkbox">
+          <p-radioButton
+            [inputId]="category.key"
+            [value]="category.key"
+            [formControl]="ClienteFrom.controls.porte"
+          />
+          <label [for]="category.key" class="ml-2">
+            {{ category.name }}
+          </label>
+        </div>
+      </div>
+
+    <div class="button">
+        <div class="card flex flex-wrap gap-3">
+            <p-button type="submit" [disabled]="!ClienteFrom.valid" label="Gravar" [raised]="true" severity="success" />
+        </div>
+    </div>
+</form>

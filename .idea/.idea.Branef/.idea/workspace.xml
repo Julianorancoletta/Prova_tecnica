@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0ca0e0e-5624-4d3b-89d2-e1336b5635d3" name="Changes" comment="" />
+    <list default="true" id="c0ca0e0e-5624-4d3b-89d2-e1336b5635d3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Branef/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Branef/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/front/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/front/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/front/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/front/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/front/src/app/service/common/base.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/front/src/app/service/common/base.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/front/src/app/service/common/error.handler.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/front/src/app/service/home.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/front/src/app/service/home.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -19,6 +29,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -34,6 +46,10 @@
       <updated>1732113698879</updated>
       <workItem from="1732113700214" duration="110000" />
       <workItem from="1732113822790" duration="9000" />
+      <workItem from="1732147568771" duration="261000" />
+      <workItem from="1732147848931" duration="116000" />
+      <workItem from="1732147976581" duration="53000" />
+      <workItem from="1732148262203" duration="3000" />
     </task>
     <servers />
   </component>

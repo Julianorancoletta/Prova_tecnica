@@ -3,7 +3,9 @@ import { throwError } from 'rxjs';
 import { environment } from '../../environments/environment.prod';
 
 export abstract class BaseService {
+  
   protected UrlService: string = environment.api;
+
   protected extractData(response: any) {
     return response || {};
   }
@@ -13,14 +15,6 @@ export abstract class BaseService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': `${environment.api}`,
-      }),
-    };
-  }
-
-  protected ObterAuthHeaderJson() {
-    return {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
       }),
     };
   }
